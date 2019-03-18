@@ -37,14 +37,15 @@
 
 		public static function find($id) {
 			$currentToDoCount = count($_SESSION["todos"]);
+			$todo = null;
 			for ($index = 0; $index < $currentToDoCount; $index++) {
 				if (isset($_SESSION["todos"][$index])) {
 					if ($_SESSION["todos"][$index]->id == $id) {
-						return $_SESSION["todos"][$index];
+						$todo = $_SESSION["todos"][$index];
 					}	
 				}
 			}
-			return null;
+			return $todo;
 		}		
 	}
  ?>
